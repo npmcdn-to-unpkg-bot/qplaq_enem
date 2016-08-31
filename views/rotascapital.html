@@ -1,0 +1,46 @@
+<div class="container-fluid bodyenem">
+    <div class="row">
+        <div class="col-md-3 col-lg-2">
+            <form action="">
+                <div class="form-group">
+                    <label for="">Codigo:</label>
+                    <input type="text" class="form-control" ng-model="codigo" ng-enter="envia(codigo)"
+                           focus-me="focus">
+                </div>
+            </form>
+            <div class="colunadireita">
+                <table class="table table-bordered">
+                    <tbody>
+                    <tr ng-repeat="cada in lista">
+                        <td ng-bind="cada.codigo"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <ul class="nav">
+                    <li>Conferidos: {{triado}}</li>
+                    <li>Restantes: {{restante}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-9 col-lg-10">
+
+            <div class="corpo_ordem" ng-class="mudarCor(enem.dataprevista)">
+                <div>
+                    <label ng-bind="enem.rota" class="rotas"></label>
+                </div>
+                <div>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th><label ng-bind="enem.codigo" class="destinatario"></label></th>
+                            <th><label ng-bind="enem.cidade"></label></th>
+                            <th><label ng-bind="enem.dataprevista | diadasemana "></label></th>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
